@@ -1,1 +1,12 @@
-Hola Mundo
+<div class="container">
+  <form [FormGroup]="form" (ngSubmit)="save()">
+     <div>
+        <p>Carrito de compras para</p>
+        <mat-form-field appearance="outline">
+            <mat-label>Cliente</mat-label>
+            <input matInput placeholder="Cliente" />
+        </mat-form-field>
+     </div>
+  </form>
+
+</div>

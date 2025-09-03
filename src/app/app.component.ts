@@ -53,7 +53,7 @@ export class AppComponent {
 
   form: FormGroup = this.formBuilder.group({
     client: this.formBuilder.control(''),
-    products: this.formBuilder.array<ProductForm>([]),
+    products: this.formBuilder.array<ProductForm>([this.createProductForm()]),
   });
 
   createProductForm(): ProductForm {
@@ -62,5 +62,9 @@ export class AppComponent {
       price: this.formBuilder.control<number>(0),
       quantity: this.formBuilder.control<number>(0),
     });
+  }
+
+  save() {
+    console.log(this.form.value);
   }
 }
