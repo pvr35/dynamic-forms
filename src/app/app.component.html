@@ -1,5 +1,5 @@
 <div class="container">
-  <form [FormGroup]="form" (ngSubmit)="save()">
+  <form (ngSubmit)="save()">
      <div>
         <p>Carrito de compras para</p>
         <mat-form-field appearance="outline">
@@ -8,7 +8,23 @@
         </mat-form-field>
      </div>
      <div class="product-add">
-        <button mat-flat-button type="button">Agregar</button>
+        <button mat-flat-button type="button" (click)="add()">Agregar</button>
+
+     </div>
+
+     <div class="product-container">
+        <div class="product-row">
+            <mat-form-field appearance="outline">
+                <mat-label>Producto</mat-label>
+                <input matInput placeholder="Producto" />
+            </mat-form-field><mat-form-field appearance="outline">
+                <mat-label>Precio</mat-label>
+                <input matInput placeholder="Precio" />
+            </mat-form-field><mat-form-field appearance="outline">
+                <mat-label>Cantidad</mat-label>
+                <input matInput placeholder="Cantidad" />
+            </mat-form-field>
+        </div>
 
      </div>
   </form>

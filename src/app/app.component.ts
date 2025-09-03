@@ -67,4 +67,8 @@ export class AppComponent {
   save() {
     console.log(this.form.value);
   }
+
+  add() {
+    // Add a new product form
+  }
 }
