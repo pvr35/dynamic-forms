@@ -51,6 +51,10 @@ export class AppComponent {
 
   formBuilder = inject(NonNullableFormBuilder);
 
+  get productArray(): FormArray<ProductForm> {
+    return this.form.get('products') as FormArray<ProductForm>;
+  }
+
   form: FormGroup = this.formBuilder.group({
     client: this.formBuilder.control(''),
     products: this.formBuilder.array<ProductForm>([this.createProductForm()]),
@@ -69,6 +73,10 @@ export class AppComponent {
   }
 
   add() {
-    // Add a new product form
+    this.productArray.push (this.createProductForm());
+  }
+
+  delete(index: number) {
+    this.productArray.removeAt
   }
 }
