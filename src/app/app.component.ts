@@ -3,7 +3,7 @@ import { Form, FormArray, FormControl, FormGroup, NonNullableFormBuilder, Reacti
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select'
+import { MatSelectChange, MatSelectModule } from '@angular/material/select'
 
 interface Product {
   id: number;
@@ -66,6 +66,10 @@ export class AppComponent {
       price: this.formBuilder.control<number>(0),
       quantity: this.formBuilder.control<number>(0),
     });
+  }
+
+  change(event:MatSelectChange) {
+    console.log(event);
   }
 
   save() {
