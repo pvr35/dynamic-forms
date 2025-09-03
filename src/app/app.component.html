@@ -18,7 +18,7 @@
             <div class="product-row" [formGroupName]="index">
                 <mat-form-field appearance="outline">
                     <mat-label>Producto</mat-label>
-                    <mat-select (selectionChange)="change($event)">
+                    <mat-select (selectionChange)="change($event, index)">
                         @for(product of products; track product.id) {
                             <mat-option [value]="product">
                                 {{product.name}}

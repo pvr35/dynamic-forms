@@ -68,8 +68,10 @@ export class AppComponent {
     });
   }
 
-  change(event:MatSelectChange) {
-    console.log(event);
+  change(event:MatSelectChange, index: number) {
+    this.productArray.at(index). patchValue({
+      price: event.value.price,
+    })
   }
 
   save() {
