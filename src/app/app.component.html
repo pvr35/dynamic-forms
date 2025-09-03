@@ -18,7 +18,17 @@
             <div class="product-row" [formGroupName]="index">
                 <mat-form-field appearance="outline">
                     <mat-label>Producto</mat-label>
-                    <input matInput placeholder="Producto" formControlName ="product"/>
+                    <mat-select>
+                        @for(product of products; track product.id) {
+                            <mat-option [value]="product">
+                                {{product.name}}
+                            </mat-option>
+                        }
+                        <mat-option *ngForm="let product of products" [value]="product">
+                            {{product.name}}
+                        </mat-option>
+                    </mat-select>
+
                 </mat-form-field><mat-form-field appearance="outline">
                     <mat-label>Precio</mat-label>
                     <input matInput placeholder="Precio" formControlName ="price" />
