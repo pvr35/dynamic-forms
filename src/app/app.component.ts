@@ -77,6 +77,6 @@ export class AppComponent {
   }
 
   delete(index: number) {
-    this.productArray.removeAt
+    this.productArray.removeAt(index);
   }
 }
